@@ -22,7 +22,7 @@ app.use(cookieParser());
 //     credentials: true,
 //   })
 // );
-app.use(cors({ origin: "*" }));
+app.use(cors({ origin: "https://todo-lime-two.vercel.app" }));
 // Using routes
 app.use("/api/v1/users", userRouter);
 app.use("/api/v1/task", taskRouter);
