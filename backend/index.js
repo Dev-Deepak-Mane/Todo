@@ -33,10 +33,13 @@ app.use(
 // Using routes
 app.use("/api/v1/users", userRouter);
 app.use("/api/v1/task", taskRouter);
-app.get("/", (req, res) => {
-  res.send("Nice working");
+// app.get("/", (req, res) => {
+//   res.send("Nice working");
+// });
+app.get("*", (req, res) => {
+  //res.sendFile(path.resolve(__dirname, "../frontend/build/index.html"));
+  res.send("Welcome to todoApp");
 });
-
 connectDB();
 
 app.listen(process.env.PORT, () => {
