@@ -5,8 +5,9 @@ export const userRegister = (data) => async (dispatch) => {
   try {
     dispatch({ type: types.USER_REGISTER_REQUEST });
     console.log(`${process.env.REACT_APP_BASE_URL}`);
+    console.log(data);
     const res = await axios.post(
-      `${process.env.REACT_APP_BASE_URL}/api/v1/users/new`,
+      `https://todo-backend-gold-one.vercel.app/api/v1/users/new`,
       data,
       {
         withCredentials: true,
@@ -20,7 +21,7 @@ export const userRegister = (data) => async (dispatch) => {
     dispatch({
       type: types.USER_REGISTER_SUCCESS,
       payload: {
-        message: res.data.message,
+        message: res.data.message || "error",
       },
     });
   } catch (error) {
