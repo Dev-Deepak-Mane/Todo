@@ -5,7 +5,7 @@ export const getTasks = () => (dispatch) => {
   try {
     dispatch({ type: types.GET_TASK_REQUEST });
     axios
-      .get("https://jittery-turtleneck-yak.cyclic.app/api/v1/task/my", {
+      .get(`${process.env.REACT_APP_BASE_URL}/api/v1/task/my`, {
         withCredentials: true,
       })
       .then((res) => {

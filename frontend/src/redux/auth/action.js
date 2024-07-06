@@ -6,7 +6,7 @@ export const userRegister = (data) => async (dispatch) => {
     dispatch({ type: types.USER_REGISTER_REQUEST });
 
     const res = await axios.post(
-      "https://jittery-turtleneck-yak.cyclic.app/api/v1/users/new",
+      `${process.env.REACT_APP_BASE_URL}/api/v1/users/new`,
       data,
       {
         withCredentials: true,
@@ -38,7 +38,7 @@ export const userLogin = (payload) => async (dispatch) => {
     dispatch({ type: types.USER_LOGIN_REQUEST });
 
     const res = await axios.post(
-      "https://jittery-turtleneck-yak.cyclic.app/api/v1/users/login",
+      `${process.env.REACT_APP_BASE_URL}/login`,
       payload,
       {
         withCredentials: true,
@@ -65,7 +65,7 @@ export const getUserProfile = () => async (dispatch) => {
   dispatch({ type: types.USER_PROFILE_REQUEST });
   try {
     const res = await axios.get(
-      "https://jittery-turtleneck-yak.cyclic.app/api/v1/users/me",
+      `${process.env.REACT_APP_BASE_URL}/api/v1/users/me`,
       {
         withCredentials: true,
       }
@@ -89,7 +89,7 @@ export const getUserProfile = () => async (dispatch) => {
 
 export const userLogout = () => (dispatch) => {
   axios
-    .get("https://jittery-turtleneck-yak.cyclic.app/api/v1/users/logout", {
+    .get(`${process.env.REACT_APP_BASE_URL}/api/v1/users/logout`, {
       withCredentials: true,
     })
     .then((res) => {
