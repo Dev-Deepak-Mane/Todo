@@ -2,14 +2,14 @@
   "version": 2,
   "builds": [
     {
-      "src": "backend/minimal.js",
+      "src": "minimal.js",
       "use": "@vercel/node"
     }
   ],
   "routes": [
     {
       "src": "/(.*)",
-      "dest": "backend/minimal.js"
+      "dest": "minimal.js"
     }
   ]
 }
