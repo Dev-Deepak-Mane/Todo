@@ -25,7 +25,7 @@ export const login = async (req, res, next) => {
 export const register = async (req, res, next) => {
   try {
     const { name, email, password } = req.body;
-    console.log(req.body);
+
     let user = await User.findOne({ email });
 
     if (user) return next(new ErrorHandler("User Already Exist", 400));

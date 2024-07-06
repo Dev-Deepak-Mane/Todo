@@ -6,7 +6,7 @@ import cookieParser from "cookie-parser";
 import { errorMiddleware } from "./middlewares/error.js";
 import cors from "cors";
 import { connectDB } from "./data/database.js";
-// export const app = express();
+export const app = express();
 
 config({
   path: "./data/config.env",
@@ -37,7 +37,6 @@ app.use("/api/v1/task", taskRouter);
 //   res.send("Nice working");
 // });
 app.get("*", (req, res) => {
-  //res.sendFile(path.resolve(__dirname, "../frontend/build/index.html"));
   res.send("Welcome to todoApp");
 });
 connectDB();
