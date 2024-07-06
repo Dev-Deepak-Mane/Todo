@@ -31,7 +31,7 @@ app.use((req, res, next) => {
 });
 app.use(
   cors({
-    origin: ["https://todo-lime-two.vercel.app", "*"],
+    origin: ["https://todo-lime-two.vercel.app/", "*"],
     credentials: true,
     methods: ["GET", "POST", "DELETE", "UPDATE", "PUT", "PATCH"],
     allowedHeaders: "Content-Type, Authorization",
