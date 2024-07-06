@@ -39,7 +39,7 @@ export const userLogin = (payload) => async (dispatch) => {
     dispatch({ type: types.USER_LOGIN_REQUEST });
 
     const res = await axios.post(
-      `${process.env.REACT_APP_BASE_URL}/login`,
+      `https://todo-backend-gold-one.vercel.app/login`,
       payload,
       {
         withCredentials: true,
@@ -66,7 +66,7 @@ export const getUserProfile = () => async (dispatch) => {
   dispatch({ type: types.USER_PROFILE_REQUEST });
   try {
     const res = await axios.get(
-      `${process.env.REACT_APP_BASE_URL}/api/v1/users/me`,
+      `https://todo-backend-gold-one.vercel.app/api/v1/users/me`,
       {
         withCredentials: true,
       }
@@ -90,7 +90,7 @@ export const getUserProfile = () => async (dispatch) => {
 
 export const userLogout = () => (dispatch) => {
   axios
-    .get(`${process.env.REACT_APP_BASE_URL}/api/v1/users/logout`, {
+    .get(`https://todo-backend-gold-one.vercel.app/api/v1/users/logout`, {
       withCredentials: true,
     })
     .then((res) => {
