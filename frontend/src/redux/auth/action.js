@@ -6,7 +6,7 @@ export const userRegister = (data) => async (dispatch) => {
     dispatch({ type: types.USER_REGISTER_REQUEST });
 
     const res = await axios.post(
-      `${process.env.REACT_APP_BASE_URL}/api/v1/users/new`,
+      `https://todobackend-tau.vercel.app/api/v1/users/new`,
       data,
       {
         withCredentials: true,
