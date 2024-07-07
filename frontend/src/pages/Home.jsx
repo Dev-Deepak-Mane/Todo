@@ -206,6 +206,7 @@ const Home = () => {
                         <Td>{t.description}</Td>
                         <Td>
                           <Checkbox
+                            borderColor={"#4299e1"}
                             defaultChecked={t.isCompleted}
                             onChange={() => handleEditTask(t._id)}
                           >
