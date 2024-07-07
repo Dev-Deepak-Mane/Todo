@@ -3,9 +3,7 @@ import jwt from "jsonwebtoken";
 export const sendCookie = (user, res, message, statusCode = 200) => {
   const token = jwt.sign({ _id: user._id }, process.env.JWT_SECRET);
   const options = {
-    expires: new Date(
-      Date.now() + process.env.COOKIE_EXPIRE * 24 * 60 * 60 * 1000
-    ),
+    expires: new Date(Date.now() + 1 * 24 * 60 * 60 * 1000),
     httpOnly: true,
     sameSite: "none",
     secure: true,
