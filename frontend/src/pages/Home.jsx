@@ -35,13 +35,15 @@ const Home = () => {
   const dispatch = useDispatch();
   const toast = useToast();
   const handleEditTask = (id) => {
+    console.log(id);
     axios
       .patch(`https://todo-backend-gold-one.vercel.app/api/v1/task/${id}`, {
         withCredentials: true,
       })
       .then((r) => {
+        console.log(r);
         toast({
-          title: `${r.data.message}`,
+          title: `${r?.data?.message}`,
           status: "info",
           isClosable: true,
           position: "top",
@@ -51,13 +53,13 @@ const Home = () => {
       })
       .catch((error) => {
         toast({
-          title: `${error.data.message}`,
+          title: `${error?.data?.message || "error while updating"}`,
           status: "error",
           isClosable: true,
           position: "top",
           duration: 1000,
         });
-        console.log(error);
+        console.log(error, "error");
       });
   };
 
