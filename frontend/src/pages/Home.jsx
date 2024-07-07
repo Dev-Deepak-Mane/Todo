@@ -36,7 +36,7 @@ const Home = () => {
   const toast = useToast();
   const handleEditTask = (id) => {
     axios
-      .put(`https://jittery-turtleneck-yak.cyclic.app/api/v1/task/${id}`, {
+      .put(`https://todo-backend-gold-one.vercel.app/api/v1/task/${id}`, {
         withCredentials: true,
       })
       .then((r) => {
@@ -64,7 +64,7 @@ const Home = () => {
   const handleDeleteTask = (id) => {
     try {
       axios
-        .delete(`https://jittery-turtleneck-yak.cyclic.app/api/v1/task/${id}`, {
+        .delete(`https://todo-backend-gold-one.vercel.app/api/v1/task/${id}`, {
           withCredentials: true,
         })
         .then((r) => dispatch(getTasks()));
@@ -83,7 +83,7 @@ const Home = () => {
     try {
       axios
         .post(
-          "https://jittery-turtleneck-yak.cyclic.app/api/v1/task/new",
+          "https://todo-backend-gold-one.vercel.app/api/v1/task/new",
           payload,
           {
             withCredentials: true,
