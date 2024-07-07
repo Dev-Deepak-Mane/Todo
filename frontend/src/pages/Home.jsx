@@ -67,7 +67,16 @@ const Home = () => {
         .delete(`https://todo-backend-gold-one.vercel.app/api/v1/task/${id}`, {
           withCredentials: true,
         })
-        .then((r) => dispatch(getTasks()));
+        .then((r) => {
+          toast({
+            title: `${r.data.message}`,
+            status: "info",
+            isClosable: true,
+            position: "top",
+            duration: 1000,
+          });
+          dispatch(getTasks());
+        });
     } catch (error) {
       console.log(error);
     }
@@ -94,6 +103,14 @@ const Home = () => {
         )
         .then((res) => {
           console.log(res);
+
+          toast({
+            title: `${res.data.message}`,
+            status: "info",
+            isClosable: true,
+            position: "top",
+            duration: 1000,
+          });
           dispatch(getTasks());
           ref.current[0].value = "";
           ref.current[1].value = "";
