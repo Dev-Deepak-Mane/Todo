@@ -76,7 +76,7 @@ const Home = () => {
         .then((r) => {
           toast({
             title: `${r.data.message}`,
-            status: "info",
+            status: "error",
             isClosable: true,
             position: "top",
             duration: 1000,
