@@ -37,9 +37,13 @@ const Home = () => {
   const handleEditTask = (id) => {
     console.log(id);
     axios
-      .patch(`https://todo-backend-gold-one.vercel.app/api/v1/task/${id}`, {
-        withCredentials: true,
-      })
+      .patch(
+        `https://todo-backend-gold-one.vercel.app/api/v1/task/${id}`,
+        {},
+        {
+          withCredentials: true,
+        }
+      )
       .then((r) => {
         console.log(r);
         toast({
